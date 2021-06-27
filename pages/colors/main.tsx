@@ -6,16 +6,16 @@ import styles from '../../styles/Colors.module.scss'
 import GridTable from './gridtable'
 import Detail from './detail'
 
-export default function() {
-    const router = useRouter()
-    const colorState = useSelector(state => state.colors)
+export default function Main() {
+    const router: any = useRouter()
+    const colorState = useSelector((state: any) => state.colors)
     const [selectedColorGroup, setSelectedColorGroup] = useState(router.query.nav || '')
     const [detailColor, setDetailColor] = useState()
     const [selectedPage, setSelectedPage] = useState(1)
     const isDetailMode = !!detailColor
     useEffect(() => {
         setSelectedColorGroup(router.query.nav)
-        setDetailColor(null)
+        setDetailColor(undefined)
         setSelectedPage(1)
     }, [router.query.nav])
 
@@ -24,8 +24,8 @@ export default function() {
     return <div className={styles.main}>
         {
             isDetailMode ? 
-            <Detail onClear={() => setDetailColor(null)} color={detailColor} allColors={colorDataSet}></Detail> :
-            <GridTable  data={colorDataSet} onSelect={(data: object) => {setDetailColor(data)}} selectedPage={selectedPage} onPageChange={(page) => setSelectedPage(page)}/>
+            <Detail onClear={() => setDetailColor(undefined)} color={detailColor} allColors={colorDataSet}></Detail> :
+            <GridTable  data={colorDataSet} onSelect={(data: any) => {setDetailColor(data)}} selectedPage={selectedPage} onPageChange={(page: any) => setSelectedPage(page)}/>
         }
     </div>
 }

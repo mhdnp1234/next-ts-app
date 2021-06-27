@@ -16,10 +16,10 @@ export default function GridTable({data, onSelect, selectedPage, onPageChange} :
 
     return <div className={styles.gridlayout}>
         <div className={styles["grid-data"]}>
-            {visibleDataSet.map((color: object, index: BigInteger) => <div className={styles["card-area"]}><ColorCard key={`${color.name}`} color={color} onSelect={() => onSelect(color, index)} /></div> )}
+            {visibleDataSet && visibleDataSet.map((color: any, index: BigInteger) => <div key={`${color.name}-${index}`} className={styles["card-area"]}><ColorCard key={`${color.name}`} color={color} onSelect={() => onSelect(color, index)} /></div> )}
         </div>
         
-        <div className={styles.pagination}>{pageArray.map(page => <div key={`page-${page}`} className={styles.page} onClick={() => {
+        <div className={styles.pagination}>{pageArray && pageArray.map(page => <div key={`page-${page}`} className={styles.page} onClick={() => {
             setCurrentPage(page)
             onPageChange && onPageChange(page)
             }}>{page}</div>)}</div>

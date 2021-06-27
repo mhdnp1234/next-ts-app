@@ -1,4 +1,4 @@
-const BASIC_COLORS = {
+export const BASIC_COLORS = {
     "RED": "Red",
     "ORANGE": "Orange",
     "YELLOW": "Yellow",
@@ -12,7 +12,7 @@ const BASIC_COLORS = {
 /**
  * Color group reference https://www.w3schools.com/colors/colors_groups.asp
  */
-const COLOR_DATABASE = {
+export const COLOR_DATABASE = {
     [BASIC_COLORS.RED]: [
         {
             hex: "#FFA07A",
@@ -471,4 +471,4 @@ const COLOR_DATABASE = {
     ],
 }
 
-export {BASIC_COLORS, COLOR_DATABASE}
+export default {BASIC_COLORS, COLOR_DATABASE}

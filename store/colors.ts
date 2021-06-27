@@ -1,4 +1,4 @@
-import { BASIC_COLORS, COLOR_DATABASE } from "../colors/constants"
+import { BASIC_COLORS, COLOR_DATABASE } from "../constants/colorConstants"
 
 const initialState = {
     basicColors: BASIC_COLORS,
@@ -6,7 +6,7 @@ const initialState = {
         acc = {...acc, [groupColor.toUpperCase()]: COLOR_DATABASE[groupColor].map(color => ({...color, group: groupColor.toUpperCase()}))}
         return acc
     }, {}),
-    flatAllColours: Object.keys(COLOR_DATABASE).reduce((acc, groupColor) => {
+    flatAllColours: Object.keys(COLOR_DATABASE).reduce((acc: any, groupColor) => {
         acc = [...acc, ...COLOR_DATABASE[groupColor].map(color => ({...color, group: groupColor.toUpperCase()}))]
         return acc
     }, []),

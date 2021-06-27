@@ -8,7 +8,7 @@ function SearchBar() {
     return <input className={styles.input} placeholder="Search" ></input>
 }
 
-export default function () {
+export default function Header() {
     return <div className={styles.header}>
         <Link href="/colors">
         <Image src={logo} alt="" />
